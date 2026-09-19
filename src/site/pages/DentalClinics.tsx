@@ -77,7 +77,7 @@ const coreGroups = [
 "Invoices and estimates before the patient commits to treatment",
 "Payment plans for big work like implants and braces",
 "Expenses and staff commissions tracked as they happen",
-"See profit per treatment and per dentist — not just month-end totals",
+"See profit per treatment and per dentist, not just month-end totals",
     ],
   },
   {
@@ -107,9 +107,9 @@ const coreGroups = [
 const DentalClinics = () => {
   return (
     <Layout>
-      <div className="eye-theme">
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <header className="mb-24 text-center">
+      <div className="eye-theme overflow-x-hidden">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:py-24">
+          <header className="mb-16 text-center lg:mb-24">
             <motion.p
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -123,21 +123,21 @@ const DentalClinics = () => {
               initial="hidden"
               animate="show"
               variants={reveal}
-              className="mx-auto mb-8 max-w-4xl text-4xl font-bold leading-tight text-foreground md:text-6xl"
+              className="mx-auto mb-6 max-w-4xl text-3xl font-bold leading-tight text-foreground sm:text-4xl md:mb-8 md:text-6xl"
             >
               You didn't train for years{" "}
               <span className="text-primary">to fight paperwork.</span>
             </motion.h1>
-            <motion.div initial="hidden" animate="show" variants={reveal} transition={{ delay: 0.3 }} className="flex flex-col items-center justify-center gap-4 md:flex-row">
-              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md bg-primary px-10 py-4 font-bold text-primary-foreground transition-colors hover:bg-foreground">
+            <motion.div initial="hidden" animate="show" variants={reveal} transition={{ delay: 0.3 }} className="flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
+              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-6 py-4 font-bold text-primary-foreground transition-colors hover:bg-foreground sm:w-auto sm:px-10">
                 <MessageCircle className="h-5 w-5" /> Talk to us on WhatsApp
               </a>
-              <Link to="/industries/dental-clinics/features" className="inline-flex items-center gap-2 rounded-md border border-primary px-10 py-4 font-bold text-primary transition-colors hover:bg-primary/10">
+              <Link to="/industries/dental-clinics/features" className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-primary px-6 py-4 font-bold text-primary transition-colors hover:bg-primary/10 sm:w-auto sm:px-10">
                 See the full feature list <ArrowRight className="h-4 w-4" />
               </Link>
             </motion.div>
             <motion.p initial="hidden" whileInView="show" viewport={viewport} variants={reveal} className="mx-auto mt-12 max-w-3xl border-t border-primary/20 pt-8 text-sm leading-relaxed text-muted-foreground">
-              We built Clinexus sitting with dental clinics like yours — busy chairs, real patients, real days. Everything below exists because a clinic like yours asked for it, not because a software company guessed.
+              We built Clinexus sitting with dental clinics like yours: busy chairs, real patients, real days. Everything below exists because a clinic like yours asked for it, not because a software company guessed.
             </motion.p>
           </header>
 
@@ -146,11 +146,11 @@ const DentalClinics = () => {
               What you get, <span className="text-muted-foreground">in plain words</span>
             </motion.h2>
             <motion.p initial="hidden" whileInView="show" viewport={viewport} variants={reveal} className="mb-10 max-w-2xl text-muted-foreground">
-              One simple system for your patients, your appointments, your money and your stock — instead of folders, notebooks and endless chats.
+              One simple system for your patients, your appointments, your money and your stock instead of folders, notebooks and endless chats.
             </motion.p>
-            <div className="mb-24 grid gap-6 md:grid-cols-2">
+            <div className="mb-16 grid gap-6 md:grid-cols-2 lg:mb-24">
               {modules.map((item, i) => (
-                <motion.article key={item.name} initial="hidden" whileInView="show" viewport={viewport} variants={slide(i % 2 === 0 ? "left" : "right")} whileHover={{ y: -5 }} className="eye-panel flex flex-col rounded-3xl p-7">
+                <motion.article key={item.name} initial="hidden" whileInView="show" viewport={viewport} variants={slide(i % 2 === 0 ? "left" : "right")} whileHover={{ y: -5 }} className="eye-panel min-w-0 flex flex-col rounded-2xl p-5 sm:rounded-3xl sm:p-7">
                   <Screenshot src={item.shot} alt={item.shotAlt} />
                   <div className="mb-5 flex items-center justify-between">
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10"><item.icon className="h-5 w-5 text-primary" /></div>
@@ -165,14 +165,14 @@ const DentalClinics = () => {
           </section>
 
           <motion.h2 initial="hidden" whileInView="show" viewport={viewport} variants={reveal} className="mb-4 text-2xl font-bold text-foreground md:text-3xl">
-            The rest of the clinic, <span className="text-muted-foreground">already in there — not another product to buy</span>
+            The rest of the clinic, <span className="text-muted-foreground">already in there, not another product to buy</span>
           </motion.h2>
           <motion.p initial="hidden" whileInView="show" viewport={viewport} variants={reveal} className="mb-10 max-w-2xl text-muted-foreground">
-            Seeing patients is only half the job. The other half — money, stock, staff and the patients you haven't seen in a year — lives in the same system, using the same records.
+            Seeing patients is only half the job. The other half, including money, stock, staff and the patients you haven't seen in a year, lives in the same system using the same records.
           </motion.p>
-          <div className="mb-24 grid gap-4 md:grid-cols-2">
+          <div className="mb-16 grid gap-4 md:grid-cols-2 lg:mb-24">
             {coreGroups.map((group, i) => (
-              <motion.article key={group.title} initial="hidden" whileInView="show" viewport={viewport} variants={slide(i % 2 === 0 ? "left" : "right")} whileHover={{ y: -5 }} className={i === 1 ? "eye-panel-light rounded-3xl p-8" : i === 2 ? "eye-panel-accent rounded-3xl p-8" : "eye-panel rounded-3xl p-8"}>
+              <motion.article key={group.title} initial="hidden" whileInView="show" viewport={viewport} variants={slide(i % 2 === 0 ? "left" : "right")} whileHover={{ y: -5 }} className={i === 1 ? "eye-panel-light min-w-0 rounded-2xl p-5 sm:rounded-3xl sm:p-8" : i === 2 ? "eye-panel-accent min-w-0 rounded-2xl p-5 sm:rounded-3xl sm:p-8" : "eye-panel min-w-0 rounded-2xl p-5 sm:rounded-3xl sm:p-8"}>
                 <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10"><group.icon className="h-5 w-5 text-primary" /></div>
                 <h3 className="mb-2 text-xl font-bold">{group.title}</h3>
                 <p className="mb-5 font-medium text-primary">{group.benefit}</p>
@@ -181,14 +181,14 @@ const DentalClinics = () => {
             ))}
           </div>
 
-          <div className="mb-24 grid gap-4 md:grid-cols-12">
-            <motion.section initial="hidden" whileInView="show" viewport={viewport} variants={slide("left")} className="eye-panel col-span-12 rounded-3xl p-8 md:col-span-7">
+          <div className="mb-16 grid gap-4 md:grid-cols-12 lg:mb-24">
+            <motion.section initial="hidden" whileInView="show" viewport={viewport} variants={slide("left")} className="eye-panel col-span-12 min-w-0 rounded-2xl p-5 sm:rounded-3xl sm:p-8 md:col-span-7">
               <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10"><Users className="h-5 w-5 text-primary" /></div>
               <h3 className="mb-2 text-xl font-bold text-card-foreground">Know what's happening, every day</h3>
               <p className="mb-5 font-medium text-primary">Without chasing anyone for an update.</p>
               <ul className="space-y-2.5">{["Patient count, pending payments and this month's revenue, right up front", "Today's schedule and who's next, plus a live activity feed", "Reports that answer the questions you actually ask"].map((point) => <li key={point} className="flex items-start gap-2.5 text-sm leading-relaxed text-muted-foreground"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" /><span>{point}</span></li>)}</ul>
             </motion.section>
-            <motion.section initial="hidden" whileInView="show" viewport={viewport} variants={slide("right")} className="eye-panel col-span-12 rounded-3xl p-8 md:col-span-5">
+            <motion.section initial="hidden" whileInView="show" viewport={viewport} variants={slide("right")} className="eye-panel col-span-12 min-w-0 rounded-2xl p-5 sm:rounded-3xl sm:p-8 md:col-span-5">
               <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10"><ShieldCheck className="h-5 w-5 text-primary" /></div>
               <h3 className="mb-2 text-xl font-bold text-card-foreground">Everyone sees only what they should</h3>
               <p className="mb-5 font-medium text-primary">Reception doesn't see your finances. Simple.</p>
@@ -196,24 +196,24 @@ const DentalClinics = () => {
             </motion.section>
           </div>
 
-          <motion.section initial="hidden" whileInView="show" viewport={viewport} variants={reveal} className="eye-panel rounded-[3rem] p-8 text-center md:p-12" style={{ borderColor: "hsl(var(--primary) / 0.3)" }}>
+          <motion.section initial="hidden" whileInView="show" viewport={viewport} variants={reveal} className="eye-panel rounded-2xl p-5 text-center sm:rounded-[3rem] sm:p-8 md:p-12" style={{ borderColor: "hsl(var(--primary) / 0.3)" }}>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary">Getting started</p>
             <h2 className="mb-4 text-3xl font-bold text-card-foreground">One plan. Everything included. No surprises.</h2>
-            <p className="mx-auto mb-12 max-w-2xl text-muted-foreground">We don't lock billing or stock behind a pricier tier. Everything you just read is included from day one — just pick how often you want to pay.</p>
-            <div className="mx-auto mb-12 grid max-w-4xl gap-8 md:grid-cols-3">{plans.map((plan, i) => <motion.div key={plan.period} initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewport} transition={{ delay: i * 0.12, duration: 0.6, ease: EASE }} whileHover={{ y: -6 }} className={plan.featured ? "eye-panel-accent scale-105 rounded-2xl p-6 shadow-xl" : "rounded-2xl bg-background/50 p-6"}><p className={plan.featured ? "mb-2 text-sm font-bold opacity-70" : "mb-2 text-sm text-muted-foreground"}>{plan.label}</p><div className={plan.featured ? "text-3xl font-bold" : "text-3xl font-bold text-primary"}>{plan.price}</div><p className={plan.featured ? "mt-1 text-xs opacity-60" : "mt-1 text-xs text-muted-foreground/60"}>{plan.period}</p></motion.div>)}</div>
+            <p className="mx-auto mb-12 max-w-2xl text-muted-foreground">We don't lock billing or stock behind a pricier tier. Everything you just read is included from day one. Just pick how often you want to pay.</p>
+            <div className="mx-auto mb-12 grid max-w-4xl gap-8 md:grid-cols-3">{plans.map((plan, i) => <motion.div key={plan.period} initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={viewport} transition={{ delay: i * 0.12, duration: 0.6, ease: EASE }} whileHover={{ y: -6 }} className={plan.featured ? "eye-panel-accent rounded-2xl p-6 shadow-xl md:scale-105" : "rounded-2xl bg-background/50 p-6"}><p className={plan.featured ? "mb-2 text-sm font-bold opacity-70" : "mb-2 text-sm text-muted-foreground"}>{plan.label}</p><div className={plan.featured ? "text-3xl font-bold" : "text-3xl font-bold text-primary"}>{plan.price}</div><p className={plan.featured ? "mt-1 text-xs opacity-60" : "mt-1 text-xs text-muted-foreground/60"}>{plan.period}</p></motion.div>)}</div>
             <div className="mx-auto max-w-2xl text-left"><p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Included at every tier</p><div className="grid gap-4 md:grid-cols-2">{included.map((item) => <div key={item} className="flex items-start gap-2 text-sm text-muted-foreground"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" /><span>{item}</span></div>)}</div></div>
           </motion.section>
 
           <motion.section initial="hidden" whileInView="show" viewport={viewport} variants={reveal} className="mt-24 text-center">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary">Next step</p>
             <h2 className="mb-5 text-3xl font-bold text-foreground">See it with your own patients</h2>
-            <p className="mx-auto mb-10 max-w-2xl leading-relaxed text-muted-foreground">Tell us how your clinic handles booking, charting and billing today, and we'll show you Clinexus doing exactly that — your workflow, not a generic demo.</p>
-            <div className="inline-flex flex-col gap-4 md:flex-row"><a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-10 py-4 font-bold text-primary-foreground transition-colors hover:bg-foreground"><MessageCircle className="h-5 w-5" />Talk to us on WhatsApp</a><a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-md border border-primary px-10 py-4 font-bold text-primary transition-colors hover:bg-primary/10">Get started on WhatsApp <MessageCircle className="h-5 w-5" /></a></div>
-            <p className="mt-6 text-sm text-muted-foreground/60">Clinexus — clinic management for how your clinic really works.</p>
+            <p className="mx-auto mb-10 max-w-2xl leading-relaxed text-muted-foreground">Tell us how your clinic handles booking, charting and billing today, and we'll show you Clinexus doing exactly that for your workflow, not a generic demo.</p>
+            <div className="flex w-full flex-col gap-4 sm:inline-flex sm:w-auto sm:flex-row"><a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-6 py-4 font-bold text-primary-foreground transition-colors hover:bg-foreground sm:w-auto sm:px-10"><MessageCircle className="h-5 w-5" />Talk to us on WhatsApp</a><Link to="/login" className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-primary px-6 py-4 font-bold text-primary transition-colors hover:bg-primary/10 sm:w-auto sm:px-10">See demo <ArrowRight className="h-5 w-5" /></Link></div>
+            <p className="mt-6 text-sm text-muted-foreground/60">Clinexus, clinic management for how your clinic really works.</p>
           </motion.section>
         </div>
       </div>
-      <div className="mx-auto max-w-6xl px-6 pb-24">
+      <div className="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:pb-24">
         <LocalSeo specialty="Dental clinics" />
       </div>
     </Layout>

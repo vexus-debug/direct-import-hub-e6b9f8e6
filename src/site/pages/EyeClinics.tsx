@@ -75,10 +75,10 @@ const included = [
 const EyeClinics = () => {
   return (
     <Layout>
-      <div className="eye-theme">
-        <div className="mx-auto max-w-6xl px-6 py-24">
+      <div className="eye-theme overflow-x-hidden">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:py-24">
           {/* Hero */}
-          <header className="mb-24 text-center">
+          <header className="mb-16 text-center lg:mb-24">
             <motion.p
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -92,22 +92,11 @@ const EyeClinics = () => {
               initial="hidden"
               animate="show"
               variants={reveal}
-              className="mx-auto mb-8 max-w-4xl text-4xl font-bold leading-tight text-foreground md:text-6xl"
+              className="mx-auto mb-6 max-w-4xl text-3xl font-bold leading-tight text-foreground sm:text-4xl md:mb-8 md:text-6xl"
             >
               You fix eyes all day.{" "}
               <span className="text-primary">The paperwork shouldn't be your hardest job.</span>
             </motion.h1>
-
-            <motion.p
-              initial="hidden"
-              animate="show"
-              variants={reveal}
-              transition={{ delay: 0.12 }}
-              className="mx-auto mb-6 max-w-2xl text-lg leading-relaxed text-muted-foreground"
-            >
-              A lost pressure reading. A lens check nobody remembered. An optical order living in a chat
-              thread. Each one small. Together they eat your day — and put patients at risk.
-            </motion.p>
 
             <motion.p
               initial="hidden"
@@ -125,20 +114,20 @@ const EyeClinics = () => {
               animate="show"
               variants={reveal}
               transition={{ delay: 0.3 }}
-              className="flex flex-col items-center justify-center gap-4 md:flex-row"
+              className="flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center"
             >
               <a
                 href={WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-md bg-primary px-10 py-4 font-bold text-primary-foreground transition-colors hover:bg-foreground"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-6 py-4 font-bold text-primary-foreground transition-colors hover:bg-foreground sm:w-auto sm:px-10"
               >
                 <MessageCircle className="h-5 w-5" />
                 Talk to us on WhatsApp
               </a>
               <Link
                 to="/industries/eye-clinics/features"
-                className="inline-flex items-center gap-2 rounded-md border border-primary px-10 py-4 font-bold text-primary transition-colors hover:bg-primary/10"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-primary px-6 py-4 font-bold text-primary transition-colors hover:bg-primary/10 sm:w-auto sm:px-10"
               >
                 See the full feature list
                 <ArrowRight className="h-4 w-4" />
@@ -153,7 +142,7 @@ const EyeClinics = () => {
               className="mx-auto mt-12 max-w-3xl border-t border-primary/20 pt-8 text-sm leading-relaxed text-muted-foreground"
             >
               We didn't design this from an office. We built it sitting with eye clinics like yours, day after
-              day, shaped by how you actually work — not how a software company imagines you do.
+              day, shaped by how you actually work, not how a software company imagines you do.
             </motion.p>
           </header>
 
@@ -163,7 +152,7 @@ const EyeClinics = () => {
             whileInView="show"
             viewport={viewport}
             variants={reveal}
-            className="mb-24"
+            className="mb-16 lg:mb-24"
           >
             <Screenshot
               src={shotDashboard}
@@ -184,7 +173,7 @@ const EyeClinics = () => {
             <span className="text-muted-foreground">in plain words</span>
           </motion.h2>
 
-          <div className="mb-24 grid grid-cols-12 gap-4">
+          <div className="mb-16 grid grid-cols-12 gap-4 lg:mb-24">
             {/* 01 */}
             <motion.article
               initial="hidden"
@@ -192,7 +181,7 @@ const EyeClinics = () => {
               viewport={viewport}
               variants={slide("left")}
               whileHover={{ y: -5 }}
-              className="eye-panel col-span-12 flex min-h-[400px] flex-col justify-between rounded-3xl p-8 md:col-span-8"
+              className="eye-panel col-span-12 flex min-h-[400px] min-w-0 flex-col justify-between rounded-2xl p-5 sm:rounded-3xl sm:p-8 md:col-span-8"
             >
               <div>
                 <span className="font-display text-5xl font-bold text-primary/30">01</span>
@@ -205,17 +194,17 @@ const EyeClinics = () => {
                   className="mt-5"
                 />
                 <p className="mb-4 font-medium text-primary">
-                  Stop rebuilding a patient's history from memory or a paper folder — it's all on one
+                  Stop rebuilding a patient's history from memory or a paper folder. It's all on one
                   timeline, trending on its own.
                 </p>
                 <p className="max-w-2xl leading-relaxed text-muted-foreground">
                   Vision (aided, unaided, pinhole), eye pressure and how it was measured, pupils, front and
-                  back of the eye, C/D ratio and dilation. Full refraction per eye — sphere, cylinder, axis,
-                  add, prism, PD — for distance, reading, bifocal, progressive, computer and contact lens
+                  back of the eye, C/D ratio and dilation. Full refraction per eye: sphere, cylinder, axis,
+                  add, prism and PD for distance, reading, bifocal, progressive, computer and contact lens
                   prescriptions, with issue and expiry dates tracked.
                 </p>
               </div>
-              <div className="mt-8 flex gap-2 overflow-hidden">
+              <div className="mt-8 grid grid-cols-1 gap-2 sm:grid-cols-3">
                 {["OD / OS timeline", "Refraction history", "IOP + C/D trend"].map((label, i) => (
                   <motion.div
                     key={label}
@@ -238,7 +227,7 @@ const EyeClinics = () => {
               viewport={viewport}
               variants={slide("right")}
               whileHover={{ y: -5 }}
-              className="eye-panel-light col-span-12 rounded-3xl p-8 md:col-span-4"
+              className="eye-panel-light col-span-12 min-w-0 rounded-2xl p-5 sm:rounded-3xl sm:p-8 md:col-span-4"
             >
               <span className="font-display text-5xl font-bold opacity-20">02</span>
               <h3 className="mb-2 mt-4 text-2xl font-bold">Charts that draw themselves</h3>
@@ -248,7 +237,7 @@ const EyeClinics = () => {
                 className="mt-5"
               />
               <p className="mb-4 font-medium opacity-80">
-                Spot slow changes — like early glaucoma — before a single visit makes them obvious.
+                Spot slow changes, like early glaucoma, before a single visit makes them obvious.
               </p>
               <p className="text-sm leading-relaxed opacity-70">
                 Log OCT, visual fields, fundus photos, angiography, topography, pachymetry, biometry/IOL,
@@ -264,7 +253,7 @@ const EyeClinics = () => {
               viewport={viewport}
               variants={slide("up")}
               whileHover={{ y: -5 }}
-              className="eye-panel col-span-12 rounded-3xl p-8 md:col-span-4"
+              className="eye-panel col-span-12 min-w-0 rounded-2xl p-5 sm:rounded-3xl sm:p-8 md:col-span-4"
             >
               <span className="font-display text-5xl font-bold text-primary/30">03</span>
               <h3 className="mb-2 mt-4 text-xl font-bold text-card-foreground">
@@ -276,7 +265,7 @@ const EyeClinics = () => {
                 className="mt-5"
               />
               <p className="mb-2 font-medium text-primary">
-                Know where every fitting and order stands — without scrolling a chat thread.
+                Know where every fitting and order stands without scrolling a chat thread.
               </p>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Contact lens fittings record brand, type, curve, diameter, powers and fit, with aftercare
@@ -293,7 +282,7 @@ const EyeClinics = () => {
               variants={slide("up")}
               transition={{ delay: 0.1 }}
               whileHover={{ y: -5 }}
-              className="eye-panel col-span-12 rounded-3xl p-8 md:col-span-4"
+              className="eye-panel col-span-12 min-w-0 rounded-2xl p-5 sm:rounded-3xl sm:p-8 md:col-span-4"
             >
               <span className="font-display text-5xl font-bold text-primary/30">04</span>
               <h3 className="mb-2 mt-4 text-xl font-bold text-card-foreground">
@@ -305,7 +294,7 @@ const EyeClinics = () => {
                 className="mt-5"
               />
               <p className="mb-2 font-medium text-primary">
-                Everything surgery day needs sits with the booking — not scattered across folders.
+                Everything surgery day needs sits with the booking, not scattered across folders.
               </p>
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Book by procedure (phaco, trabeculectomy, YAG, pterygium, injections and more), eye and
@@ -322,11 +311,11 @@ const EyeClinics = () => {
               variants={slide("up")}
               transition={{ delay: 0.2 }}
               whileHover={{ y: -5 }}
-              className="eye-panel-accent col-span-12 rounded-3xl p-8 md:col-span-4"
+              className="eye-panel-accent col-span-12 min-w-0 rounded-2xl p-5 sm:rounded-3xl sm:p-8 md:col-span-4"
             >
               <span className="font-display text-5xl font-bold opacity-30">05</span>
               <h3 className="mb-2 mt-4 text-xl font-bold">
-                Everything else — included, not bolted on
+                Everything else, included and not bolted on
               </h3>
               <Screenshot
                 src={shotAppointments}
@@ -361,10 +350,10 @@ const EyeClinics = () => {
             variants={reveal}
             className="mb-10 max-w-2xl text-muted-foreground"
           >
-            Real screens from a working demo clinic — not mockups.
+            Real screens from a working demo clinic, not mockups.
           </motion.p>
 
-          <div className="mb-24 grid gap-10 md:grid-cols-2">
+          <div className="mb-16 grid gap-8 md:grid-cols-2 lg:mb-24 lg:gap-10">
             <motion.div initial="hidden" whileInView="show" viewport={viewport} variants={slide("left")}>
               <Screenshot
                 src={shotOverview}
@@ -414,7 +403,7 @@ const EyeClinics = () => {
             whileInView="show"
             viewport={viewport}
             variants={reveal}
-            className="eye-panel rounded-[3rem] p-8 text-center md:p-12"
+            className="eye-panel rounded-2xl p-5 text-center sm:rounded-[3rem] sm:p-8 md:p-12"
             style={{ borderColor: "hsl(var(--primary) / 0.3)" }}
           >
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
@@ -425,7 +414,7 @@ const EyeClinics = () => {
             </h2>
             <p className="mx-auto mb-12 max-w-2xl text-muted-foreground">
               We don't hold diagnostics or surgery tracking behind a pricier tier. Everything above is in
-              from day one — just choose how often you want to pay.
+              from day one. Just choose how often you want to pay.
             </p>
 
             <div className="mx-auto mb-12 grid max-w-4xl gap-8 md:grid-cols-3">
@@ -439,7 +428,7 @@ const EyeClinics = () => {
                   whileHover={{ y: -6 }}
                   className={
                     p.featured
-                      ? "eye-panel-accent scale-105 rounded-2xl p-6 shadow-xl"
+                      ? "eye-panel-accent rounded-2xl p-6 shadow-xl md:scale-105"
                       : "rounded-2xl bg-background/50 p-6"
                   }
                 >
@@ -493,35 +482,33 @@ const EyeClinics = () => {
             </h2>
             <p className="mx-auto mb-10 max-w-2xl leading-relaxed text-muted-foreground">
               Tell us how your clinic handles exams, dispensing and surgery today, and we'll show you Clinexus
-              doing exactly that — your workflow, not a generic demo.
+              doing exactly that for your workflow, not a generic demo.
             </p>
-            <div className="inline-flex flex-col gap-4 md:flex-row">
+            <div className="flex w-full flex-col gap-4 sm:inline-flex sm:w-auto sm:flex-row">
               <a
                 href={WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-10 py-4 font-bold text-primary-foreground transition-colors hover:bg-foreground"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-6 py-4 font-bold text-primary-foreground transition-colors hover:bg-foreground sm:w-auto sm:px-10"
               >
                 <MessageCircle className="h-5 w-5" />
                 Talk to us on WhatsApp
               </a>
-              <a
-                href={WHATSAPP}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-primary px-10 py-4 font-bold text-primary transition-colors hover:bg-primary/10"
+              <Link
+                to="/login"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-primary px-6 py-4 font-bold text-primary transition-colors hover:bg-primary/10 sm:w-auto sm:px-10"
               >
-                Get started on WhatsApp
-                <MessageCircle className="h-5 w-5" />
-              </a>
+                See demo
+                <ArrowRight className="h-5 w-5" />
+              </Link>
             </div>
             <p className="mt-6 text-sm text-muted-foreground/60">
-              Clinexus — clinic management for how your clinic really works.
+              Clinexus, clinic management for how your clinic really works.
             </p>
           </motion.section>
         </div>
       </div>
-      <div className="mx-auto max-w-6xl px-6 pb-24">
+      <div className="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:pb-24">
         <LocalSeo specialty="Eye clinics" />
       </div>
     </Layout>
